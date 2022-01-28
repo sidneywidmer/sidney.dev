@@ -41,7 +41,6 @@ p {
 
 p, ul, a, span {
   color: #494949;
-  fletter-spacing: -0.01em;
 }
 
 ul {
@@ -49,7 +48,9 @@ ul {
 }
 
 li {
-  margin-left: 1.5rem;
+  font-family: Georgia,Times,Times New Roman,serif; 
+  font-size: 1.3rem;
+  margin-left:  1em;
 }
 
 a {
