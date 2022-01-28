@@ -1,0 +1,11 @@
+:8080 {
+	handle {
+		encode zstd gzip
+		root public
+		file_server
+	}
+
+	handle_errors {
+		respond "Oh no, a wild {http.error.status_code} appeared!"
+	}
+}

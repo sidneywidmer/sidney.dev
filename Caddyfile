@@ -1,0 +1,25 @@
+{
+	auto_https off
+}
+
+http://sidney.dev {
+	@plzshake header X-Forwarded-Ssl off
+
+	handle {
+		encode zstd gzip
+		file_server
+		header -Server
+	}
+
+	handle @plzshake {
+		redir https://sidney.dev{uri}
+	}
+
+	handle_errors {
+		respond "Oh no, a wild {http.error.status_code} appeared!"
+	}
+}
+
+http://www.sidney.dev {
+	redir https://sidney.dev{uri}
+}
